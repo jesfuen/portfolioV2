@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	body {
+		font-family: "DM Sans", sans-serif;
+		background-color: #E0E1DD;
+		
+	}
+
+	h1 {
+		text-transform: uppercase;
+		font-size: 6rem;
+		font-weight: 600;
+		line-height: 1.2;
+	}
+
+	p {
+		text-transform: uppercase;
+		font-size: 15px;
+		font-weight: 500;
+	}
+
+	.preloader, .split-overlay, .tags-overlay {
+		position: fixed;
+		width: 100vw;
+		height: 100svh;
+	}
+
+	.preloader, .split-overlay {
+		background-color: #0D1B2A;
+		color: #E0E1DD;
+	}
+
+	.preloader, .tags-overlay {
+		z-index: 2;
+	}
+
+	.split-overlay {
+		z-index: 1;
+	}
+
+
+	.intro-title {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		text-align: center;
+	}
+
+	.outro-title {
+		position: absolute;
+		top: 50%;
+		left: calc(50% + 10rem);
+		transform: translate(-50%, -50%);
+	}
+
+
+
+	.tag {
+		position:  absolute;
+		width: max-content;
+		color: #415A77;
+		overflow: hidden;
+	}
+
+	.tag p {
+		font-size: 20px;
+		font-weight: 600;
+	}
+
+	.tag-1 {
+		top: 15%;
+		left: 15%;
+	}
+
+	.tag-2 {
+		bottom: 15%;
+		left: 25%;
+	}
+
+	.tag-3 {
+		bottom: 30%;	
+		right: 15%;
+	}
+
+	.container {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		min-height: 100svh;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		clip-path: polygon(0 48%, 0 48%, 0 52%, 0 52%);
+		background-color: #E0E1DD;
+		z-index: 2;
+	}
+
+	nav, footer {
+		position: relative;
+		width: 100vw;
+		padding: 2em;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: #0D1B2A;
+		z-index: 1002;
+	}
+
+	nav a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	nav p#logo {
+		font-weight: 900;
+		font-size: 55px;
+	}
+
+	.intro-title  .char, .outro-title .char {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+	}
+
+	.intro-title .char, .outro-title .char {
+		margin-top: 0.75rem;
+	}
+
+	.intro-title .char span, .outro-title .char span, .tag .word {
+		position: relative;
+		display: inline-block;
+		transform: translateY(-100%);
+		will-change: transform;
+
+	}
+
+	.intro-title .first-char {
+		transform-origin: top left;
+	}
+
+	/* Menú fullscreen */
+	.fullscreen-menu {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background: linear-gradient(to right, #0D1B2A, #1B263B, #0D1B2A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+		z-index: 1000;
+		visibility: hidden;
+		opacity: 0;
+		
+	}
+
+	/* Botón para cerrar (X) dentro del menú */
+	#close-menu {
+		position: absolute;
+		top: 2em;
+		right: 2em;
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 10px;
+		color: #E0E1DD;
+		z-index: 1001;
+	}
+
+	#close-menu svg {
+		display: block;
+	}
+
+
+
+	#close-menu:hover .line {
+		stroke: #778DA9;
+	}
+
+	/* Botón para abrir (hamburguesa) en el nav */
+	#open-menu {
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 15px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+	}
+
+	#open-menu svg {
+		display: flex;
+		overflow: visible;
+	}
+
+	/* Contenedor del contenido del menú */
+	.menu-content {
+		width: 100%;
+		height: 100%;
+		display: flex;
+	}
+
+	/* Lado izquierdo - Navegación */
+	.menu-left {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	}
+
+	.menu-nav {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.menu-links {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+		display: inline-block;  /* Añade esto */
+	}
+
+	.menu-links li {
+		margin: 1.5rem 0;
+		overflow: hidden;
+	}
+
+	.menu-links a {
+		text-decoration: none;
+		color: #E0E1DD;
+		font-size: 3.5rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		display: inline-block;
+		position: relative;
+	}
+
+	.link-text {
+		display: block;
+		position: relative;
+	}
+
+	.link-original,
+	.link-clone {
+		display: block;
+		transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+	}
+
+	.link-clone {
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: translateY(100%);
+		color: #778DA9;
+	}
+
+	.menu-links a:hover .link-original {
+		transform: translateY(-100%);
+	}
+
+	.menu-links a:hover .link-clone {
+		transform: translateY(0%);
+	}
+
