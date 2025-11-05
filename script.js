@@ -144,6 +144,7 @@ document.fonts.ready.then(() => {
     const openMenuBtn = document.getElementById('open-menu');
     const closeMenuBtn = document.getElementById('close-menu');
     const fullscreenMenu = document.querySelector('.fullscreen-menu');
+    const menuLinks = document.querySelectorAll('.menu-links a');
 
     // Abrir menú
 openMenuBtn.addEventListener('click', () => {
@@ -177,6 +178,18 @@ openMenuBtn.addEventListener('click', () => {
                 ease: 'elastic.out(1, 0.5)'
             },
             '<0.3'
+        )
+        .fromTo(menuLinks,
+            { y: 100, opacity: 0, rotationX: -90 },
+            { 
+                y: 0, 
+                opacity: 1, 
+                rotationX: 0,
+                duration: 0.6, 
+                stagger: 0.1,
+                ease: 'back.out(2)'
+            },
+            '<0.4'
         );
 });
 
