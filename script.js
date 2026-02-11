@@ -73,7 +73,7 @@ document.fonts.ready.then(() => {
     }, 2.5
     )
     .to([".preloader .intro-title .first-char", ".split-overlay .intro-title .first-char"], {
-        x: "21.25rem",
+        x: "21.35rem",
         duration: 1,
     }, 3.5
     )
